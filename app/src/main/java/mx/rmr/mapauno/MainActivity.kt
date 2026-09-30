@@ -56,18 +56,25 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AppPrincipal(modifier: Modifier = Modifier) {
     Column(
-        verticalArrangement = Arrangement.SpaceBetween,
+        verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
 
     ) {
-        Text(
-            text = "Usa mapas de Google",
-            style = MaterialTheme.typography.headlineLarge,
-            modifier = modifier
-        )
-        MapScreen()
+        Box(modifier = modifier
+            .fillMaxWidth()
+            .weight(1f)) {
+            Text(
+                text = "Usa mapas de Google",
+                style = MaterialTheme.typography.headlineMedium,
+            )
+        }
+        Box(modifier = modifier
+            .fillMaxWidth()
+            .weight(1f)) {
+            MapScreen()
+        }
     }
 }
 
@@ -125,7 +132,8 @@ fun MapScreen(modifier: Modifier = Modifier) {
             imageVector = Icons.Default.LocationOn,
             contentDescription = "Centro del mapa",
             tint = Color.Red,
-            modifier = modifier.size(48.dp)
+            modifier = modifier
+                .size(48.dp)
                 .align(Alignment.Center)
         )
     }
